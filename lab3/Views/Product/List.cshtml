@@ -1,0 +1,56 @@
+﻿@model IEnumerable<lab3.EF.Product>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+<table class="table">
+
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Quantity
+        </th>
+
+    </tr>
+
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.ID
+            </td>
+            <td>
+                @item.Name
+            </td>
+
+            <td>
+                @item.Price
+            </td>
+            <td>
+                @item.qty
+            </td>
+            <td>
+                <a href="/Product/Edit/@item.ID">Edit</a>
+                |
+                <a href="/Product/Remove/@item.ID">Remove</a>
+            </td>
+
+        </tr>
+        }
+
+
+</table>
+
+
